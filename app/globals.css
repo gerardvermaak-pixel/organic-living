@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gold: #d4af37;
+}
+
+body {
+  font-family: var(--font-inter);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-playfair);
+}
+
+.gold-text {
+  color: #d4af37;
+}
+
+.luxury-card {
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.luxury-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 70px -15px rgba(212, 175, 55, 0.15);
+  border-color: #d4af37;
+}
+
+.gold-border {
+  border: 1px solid #d4af37;
+}
+
+.section-title {
+  position: relative;
+  display: inline-block;
+}
+
+.section-title:after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(to right, #d4af37, transparent);
+}
