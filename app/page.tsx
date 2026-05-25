@@ -1,80 +1,14 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ShoppingCart, X, Plus, Minus, Leaf, Award, Users } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Leaf, Award, Users, ShoppingCart } from 'lucide-react';
+import { products, Product } from '@/lib/products';
+import ProductCard from '@/components/ProductCard';
+import CartSidebar from '@/components/CartSidebar';
+import CheckoutModal from '@/components/CheckoutModal';
 
-interface Product {
-  id: number;
-  name: string;
-  price: number;
-  unit: string;
-  description: string;
-  longDesc: string;
-  benefits: string[];
-  image: string;
-  category: string;
-}
-
-const products: Product[] = [
-  {
-    id: 1,
-    name: "Raw Cacao Beans",
-    price: 850,
-    unit: "kg",
-    description: "The purest form — unroasted, unprocessed, maximum nutrients.",
-    longDesc: "Our raw cacao beans are harvested at peak ripeness from organic farms in South America. Retaining all natural enzymes, antioxidants, and mood-enhancing compounds.",
-    benefits: ["Highest antioxidant levels", "Natural mood elevation", "Sustained energy without crash", "Rich in magnesium & iron"],
-    image: "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?q=80&w=2070",
-    category: "raw"
-  },
-  {
-    id: 2,
-    name: "Roasted Shelled Cacao Beans",
-    price: 900,
-    unit: "kg",
-    description: "Roasted for deeper flavour while preserving 85% of nutrients.",
-    longDesc: "Gently roasted to unlock rich chocolate notes while maintaining exceptional nutritional density. Perfect for snacking or grinding fresh.",
-    benefits: ["Enhanced flavour profile", "Easier digestion", "Still extremely high in flavanols", "Ideal for daily consumption"],
-    image: "https://images.unsplash.com/photo-1621996346565-e3dbc353d2e5?q=80&w=2070",
-    category: "roasted"
-  },
-  {
-    id: 3,
-    name: "Cacao Nibs",
-    price: 1000,
-    unit: "kg",
-    description: "Crunchy, versatile superfood — nature's dark chocolate chips.",
-    longDesc: "Pure broken cacao beans. Add to smoothies, yogurt, salads or eat straight. The most convenient way to enjoy raw cacao daily.",
-    benefits: ["Versatile in recipes", "High fibre & healthy fats", "Natural theobromine boost", "No added sugar"],
-    image: "https://images.unsplash.com/photo-1606313561344-9a2f7f0e8e2e?q=80&w=2070",
-    category: "nibs"
-  },
-  {
-    id: 4,
-    name: "Cacao Powder",
-    price: 1000,
-    unit: "kg",
-    description: "Cold-pressed for maximum nutrient retention. Perfect for lattes & baking.",
-    longDesc: "Our premium cacao powder is cold-pressed to preserve heat-sensitive nutrients. Rich, velvety texture with intense chocolate flavour.",
-    benefits: ["Highest flavanol content", "Perfect for smoothies & lattes", "Supports cardiovascular health", "Natural pre-workout"],
-    image: "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?q=80&w=2070",
-    category: "powder"
-  },
-  {
-    id: 5,
-    name: "Cacao Paste",
-    price: 1200,
-    unit: "kg",
-    description: "100% pure cacao liquor — the foundation of all fine chocolate.",
-    longDesc: "Stone-ground cacao beans turned into rich paste. The ultimate ingredient for making your own chocolate or adding intense flavour to recipes.",
-    benefits: ["Most concentrated form", "Ideal for homemade chocolate", "Maximum theobromine & mood support", "Used by top chefs worldwide"],
-    image: "https://images.unsplash.com/photo-1606313561344-9a2f7f0e8e2e?q=80&w=2070",
-    category: "paste"
-  }
-];
-
-interface CartItem extends Product {
+export interface CartItem extends Product {
   quantity: number;
 }
 
@@ -83,15 +17,11 @@ export default function OrganicLiving() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [showCheckout, setShowCheckout] = useState(false);
 
-  // Load cart from localStorage
   useEffect(() => {
     const savedCart = localStorage.getItem('organicLivingCart');
-    if (savedCart) {
-      setCart(JSON.parse(savedCart));
-    }
+    if (savedCart) setCart(JSON.parse(savedCart));
   }, []);
 
-  // Save cart to localStorage
   useEffect(() => {
     localStorage.setItem('organicLivingCart', JSON.stringify(cart));
   }, [cart]);
@@ -100,23 +30,16 @@ export default function OrganicLiving() {
     setCart(prev => {
       const existing = prev.find(item => item.id === product.id);
       if (existing) {
-        return prev.map(item =>
-          item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
-        );
-      } else {
-        return [...prev, { ...product, quantity: 1 }];
+        return prev.map(item => item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item);
       }
+      return [...prev, { ...product, quantity: 1 }];
     });
     setIsCartOpen(true);
   };
 
   const updateQuantity = (id: number, newQuantity: number) => {
     if (newQuantity < 1) return;
-    setCart(prev =>
-      prev.map(item =>
-        item.id === id ? { ...item, quantity: newQuantity } : item
-      )
-    );
+    setCart(prev => prev.map(item => item.id === id ? { ...item, quantity: newQuantity } : item));
   };
 
   const removeFromCart = (id: number) => {
@@ -234,47 +157,8 @@ export default function OrganicLiving() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {products.map((product, index) => (
-            <motion.div 
-              key={product.id}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.05 }}
-              className="luxury-card group relative overflow-hidden rounded-3xl border border-white/10 bg-luxury-brown flex flex-col"
-            >
-              <div className="relative h-[420px] overflow-hidden">
-                <img 
-                  src={product.image} 
-                  alt={product.name}
-                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/90" />
-                
-                <div className="absolute top-6 right-6 px-4 py-1 bg-black/70 text-xs tracking-widest rounded-full border border-luxury-gold/30">
-                  {product.category.toUpperCase()}
-                </div>
-              </div>
-
-              <div className="p-8 flex flex-col flex-1">
-                <div>
-                  <h3 className="text-3xl font-serif tracking-tight mb-2">{product.name}</h3>
-                  <div className="text-luxury-gold text-2xl font-light tracking-tighter mb-6">
-                    R{product.price} <span className="text-sm align-super">/ {product.unit}</span>
-                  </div>
-                </div>
-
-                <p className="text-white/70 text-[15px] leading-relaxed mb-8 flex-1">
-                  {product.description}
-                </p>
-
-                <button 
-                  onClick={() => addToCart(product)}
-                  className="w-full py-4 border border-luxury-gold text-luxury-gold hover:bg-luxury-gold hover:text-luxury-black transition-all text-sm tracking-[2px] font-medium"
-                >
-                  ADD TO CART
-                </button>
-              </div>
-            </motion.div>
+          {products.map((product) => (
+            <ProductCard key={product.id} product={product} onAddToCart={addToCart} />
           ))}
         </div>
 
@@ -424,132 +308,22 @@ export default function OrganicLiving() {
         </div>
       </footer>
 
-      {/* CART SIDEBAR */}
-      <AnimatePresence>
-        {isCartOpen && (
-          <div className="fixed inset-0 z-[100] flex justify-end">
-            <div className="absolute inset-0 bg-black/80" onClick={() => setIsCartOpen(false)} />
-            
-            <motion.div 
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="relative w-full max-w-md bg-luxury-black border-l border-white/10 h-full flex flex-col"
-            >
-              <div className="p-8 flex items-center justify-between border-b border-white/10">
-                <div className="flex items-center gap-3">
-                  <ShoppingCart className="w-5 h-5" />
-                  <div className="text-xl tracking-tight">Your Cart</div>
-                </div>
-                <button onClick={() => setIsCartOpen(false)} className="text-white/50 hover:text-white">
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
+      <CartSidebar
+        isOpen={isCartOpen}
+        onClose={() => setIsCartOpen(false)}
+        cart={cart}
+        onUpdateQuantity={updateQuantity}
+        onRemove={removeFromCart}
+        onCheckout={handleCheckout}
+        total={cartTotal}
+      />
 
-              {cart.length > 0 ? (
-                <>
-                  <div className="flex-1 overflow-auto p-8 space-y-8">
-                    {cart.map((item) => (
-                      <div key={item.id} className="flex gap-5">
-                        <div className="w-20 h-20 rounded-xl overflow-hidden flex-shrink-0 border border-white/10">
-                          <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <div className="font-medium pr-8">{item.name}</div>
-                          <div className="text-luxury-gold text-sm mt-0.5">R{item.price} / {item.unit}</div>
-                          
-                          <div className="flex items-center justify-between mt-4">
-                            <div className="flex items-center border border-white/20 rounded">
-                              <button onClick={() => updateQuantity(item.id, item.quantity - 1)} className="px-3 py-1 hover:bg-white/5">−</button>
-                              <div className="px-4 text-sm tabular-nums">{item.quantity}</div>
-                              <button onClick={() => updateQuantity(item.id, item.quantity + 1)} className="px-3 py-1 hover:bg-white/5">+</button>
-                            </div>
-                            
-                            <button onClick={() => removeFromCart(item.id)} className="text-xs text-white/50 hover:text-red-400">REMOVE</button>
-                          </div>
-                        </div>
-                        <div className="text-right font-medium tabular-nums self-start mt-1">
-                          R{(item.price * item.quantity).toLocaleString()}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="p-8 border-t border-white/10">
-                    <div className="flex justify-between text-lg mb-6">
-                      <div>Total</div>
-                      <div className="font-medium tabular-nums">R{cartTotal.toLocaleString()}</div>
-                    </div>
-                    
-                    <button 
-                      onClick={handleCheckout}
-                      className="w-full py-4 bg-luxury-gold text-luxury-black font-medium tracking-[1px] hover:bg-white transition-all"
-                    >
-                      PROCEED TO CHECKOUT
-                    </button>
-                    <p className="text-center text-[10px] text-white/50 mt-4">Secure checkout • Free shipping on orders over R2,500</p>
-                  </div>
-                </>
-              ) : (
-                <div className="flex flex-col items-center justify-center h-full text-center px-8">
-                  <div className="text-6xl mb-6 opacity-40">🫘</div>
-                  <div className="text-xl mb-2">Your cart is empty</div>
-                  <p className="text-white/50">Add some premium cacao to begin your optimization journey.</p>
-                  <button 
-                    onClick={() => setIsCartOpen(false)}
-                    className="mt-8 px-8 py-3 border border-white/30 text-sm tracking-widest hover:bg-white/5"
-                  >
-                    CONTINUE SHOPPING
-                  </button>
-                </div>
-              )}
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
-
-      {/* CHECKOUT MODAL */}
-      <AnimatePresence>
-        {showCheckout && (
-          <div className="fixed inset-0 z-[200] flex items-center justify-center bg-black/90 p-6">
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.96, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.96, y: 20 }}
-              className="bg-luxury-black border border-luxury-gold/30 max-w-lg w-full rounded-3xl p-10 relative"
-            >
-              <button onClick={() => setShowCheckout(false)} className="absolute top-6 right-6 text-white/50 hover:text-white">
-                <X className="w-5 h-5" />
-              </button>
-
-              <div className="text-center">
-                <div className="mx-auto w-16 h-16 rounded-full bg-luxury-gold/10 flex items-center justify-center mb-6">
-                  <Award className="w-8 h-8 text-luxury-gold" />
-                </div>
-                
-                <div className="text-4xl font-serif tracking-tight mb-4">Thank You</div>
-                <div className="text-xl text-white/70 mb-8">Your order has been received.</div>
-
-                <div className="bg-white/5 rounded-2xl p-6 text-left text-sm space-y-3 mb-8">
-                  <div className="flex justify-between"><span className="text-white/50">Order total</span> <span className="font-medium">R{cartTotal.toLocaleString()}</span></div>
-                  <div className="flex justify-between"><span className="text-white/50">Estimated delivery</span> <span>3–5 business days</span></div>
-                  <div className="flex justify-between"><span className="text-white/50">Payment</span> <span>Cash on Delivery / EFT</span></div>
-                </div>
-
-                <button 
-                  onClick={completeOrder}
-                  className="w-full py-4 bg-luxury-gold text-luxury-black font-medium tracking-[1px] hover:bg-white transition-all"
-                >
-                  CONFIRM ORDER
-                </button>
-                
-                <p className="text-[11px] text-white/50 mt-6">A member of our team will contact you shortly to finalise delivery details and any wholesale pricing.</p>
-              </div>
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
+      <CheckoutModal
+        isOpen={showCheckout}
+        onClose={() => setShowCheckout(false)}
+        total={cartTotal}
+        onComplete={completeOrder}
+      />
     </div>
   );
 }
