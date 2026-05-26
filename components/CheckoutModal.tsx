@@ -49,7 +49,7 @@ export default function CheckoutModal({ isOpen, onClose, total, onComplete }: Ch
               <p className="text-[11px] text-white/50 mt-6">A member of our team will contact you shortly to finalise delivery details and any wholesale pricing.</p>
             </motion.div>
           </div>
-        </AnimatePresence>
+        </div>
       )}
     </AnimatePresence>
   );
