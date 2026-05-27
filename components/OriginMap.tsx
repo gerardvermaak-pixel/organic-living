@@ -52,6 +52,7 @@ export default function OriginMap() {
 
           {/* Animated Journey Line */}
           <motion.path
+            id="journeyPath"
             d="M520 240 Q420 310 280 380"
             stroke="#d4af37"
             strokeWidth="2.5"
@@ -62,7 +63,12 @@ export default function OriginMap() {
             transition={{ duration: 3, ease: "easeInOut", repeat: Infinity, repeatDelay: 1.5 }}
           />
 
-          {/* Decorative particle removed to avoid intermittent SVG attribute animation errors in some environments. */}
+          {/* SVG-native traveling particle using animateMotion tied to #journeyPath */}
+          <circle r="4" fill="#d4af37">
+            <animateMotion dur="3s" repeatCount="indefinite" begin="0s" rotate="auto">
+              <mpath href="#journeyPath" />
+            </animateMotion>
+          </circle>
         </svg>
 
         <div className="text-center mt-6 text-sm text-[#a38b6d] leading-relaxed font-light">
