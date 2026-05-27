@@ -7,6 +7,7 @@ import { products, Product } from '@/lib/products';
 import ProductCard from '@/components/ProductCard';
 import CartSidebar from '@/components/CartSidebar';
 import CheckoutModal from '@/components/CheckoutModal';
+import OurStory from '@/components/OurStory';
 
 export interface CartItem extends Product {
   quantity: number;
@@ -137,6 +138,8 @@ export default function OrganicLiving() {
           <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 2, repeat: Infinity }} className="w-px h-12 bg-gradient-to-b from-transparent via-white/50 to-transparent" />
         </div>
       </section>
+
+      <OurStory />
 
       {/* TRUST BAR */}
       <div className="border-b border-white/10 py-5">
