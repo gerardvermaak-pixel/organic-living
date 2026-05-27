@@ -78,6 +78,7 @@ export default function OrganicLiving() {
 
           <div className="flex items-center gap-8 text-sm uppercase tracking-widest">
             <a href="#shop" className="hover:text-luxury-gold transition-colors">Shop</a>
+            <a href="/learn-more" className="hover:text-luxury-gold transition-colors">Learn About Cacao</a>
             <a href="#benefits" className="hover:text-luxury-gold transition-colors">The Science</a>
             <a href="#cafes" className="hover:text-luxury-gold transition-colors">For Cafés</a>
             <a href="#story" className="hover:text-luxury-gold transition-colors">Our Story</a>
