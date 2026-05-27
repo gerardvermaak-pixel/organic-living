@@ -4,76 +4,94 @@ import { motion } from 'framer-motion';
 
 export default function OriginMap() {
   return (
-    <div className="relative w-full max-w-2xl mx-auto py-12">
-      <div className="text-center mb-8">
-        <div className="text-[#d4af37] text-sm tracking-[3px] font-medium">FROM SOURCE TO SANCTUARY</div>
-        <h3 className="font-serif text-4xl text-white mt-2">Our Cacao Journey</h3>
+    <div className="relative w-full max-w-[620px] mx-auto py-12">
+      <div className="text-center mb-10">
+        <div className="text-[#d4af37] text-sm tracking-[3px] mb-2">FROM EARTH TO CEREMONY</div>
+        <h3 className="font-serif text-5xl text-white tracking-tight">Our Cacao’s Journey</h3>
+        <p className="text-[#a38b6d] mt-3">Single-origin Tanzanian beans • Delivered with intention to Montagu</p>
       </div>
-      
-      <div className="relative bg-[#111] border border-[#3a2a1f] rounded-3xl p-8 overflow-hidden shadow-2xl">
-        {/* Simplified Africa Map (SVG) */}
+
+      <div className="relative bg-[#0f0c09] border border-[#3a2a1f] rounded-3xl p-6 overflow-hidden shadow-2xl">
         <svg 
-          viewBox="0 0 800 500" 
+          viewBox="0 0 900 620" 
           className="w-full h-auto"
           fill="none" 
           xmlns="http://www.w3.org/2000/svg"
         >
-          {/* Africa outline */}
+          {/* Africa Continent Base */}
           <path 
-            d="M200 80 Q280 60 380 90 Q520 70 620 140 Q680 220 650 320 Q580 400 450 420 Q300 430 220 380 Q160 300 180 180 Z" 
+            d="M180 90 Q280 50 420 75 Q580 55 720 130 Q810 220 780 340 Q720 430 580 470 Q420 490 280 440 Q160 360 170 200 Z" 
+            fill="#1c160f" 
             stroke="#3a2a1f" 
-            strokeWidth="3" 
-            fill="#1a140f"
+            strokeWidth="8"
           />
 
-          {/* Tanzania Highlight */}
-          <motion.circle 
-            cx="520" 
-            cy="240" 
-            r="18" 
-            fill="#d4af37" 
-            initial={{ scale: 0.8, opacity: 0.6 }}
-            animate={{ scale: [0.8, 1.1, 0.8], opacity: [0.6, 1, 0.6] }}
-            transition={{ duration: 2.5, repeat: Infinity }}
+          {/* Tanzania Outline (Animated) */}
+          <motion.path
+            d="M510 215 Q545 195 580 210 Q595 245 575 280 Q540 295 515 270 Z"
+            fill="none"
+            stroke="#d4af37"
+            strokeWidth="3.5"
+            strokeLinecap="round"
+            initial={{ pathLength: 0, opacity: 0.3 }}
+            animate={{ pathLength: 1, opacity: 1 }}
+            transition={{ duration: 2.8, ease: "easeInOut", repeat: Infinity, repeatDelay: 3 }}
           />
-          <text x="520" y="245" textAnchor="middle" fill="#d4af37" fontSize="11" fontWeight="600" className="pointer-events-none select-none">TANZANIA</text>
+          <text x="545" y="255" fill="#d4af37" fontSize="13" fontWeight="600" letterSpacing="1">TANZANIA</text>
 
-          {/* Montagu (South Africa) Highlight */}
-          <motion.circle 
-            cx="280" 
-            cy="380" 
-            r="14" 
-            fill="#d4af37" 
-            initial={{ scale: 0.8, opacity: 0.6 }}
-            animate={{ scale: [0.8, 1.15, 0.8], opacity: [0.6, 1, 0.6] }}
-            transition={{ duration: 2.2, repeat: Infinity, delay: 0.8 }}
+          {/* South Africa Outline (Animated) */}
+          <motion.path
+            d="M260 380 Q310 360 370 375 Q410 410 390 460 Q340 485 290 465 Q250 430 260 380 Z"
+            fill="none"
+            stroke="#d4af37"
+            strokeWidth="3.5"
+            strokeLinecap="round"
+            initial={{ pathLength: 0, opacity: 0.3 }}
+            animate={{ pathLength: 1, opacity: 1 }}
+            transition={{ duration: 2.8, ease: "easeInOut", repeat: Infinity, repeatDelay: 3, delay: 1.2 }}
           />
-          <text x="280" y="405" textAnchor="middle" fill="#d4af37" fontSize="11" fontWeight="600" className="pointer-events-none select-none">MONTAGU</text>
+          <text x="310" y="450" fill="#d4af37" fontSize="13" fontWeight="600" letterSpacing="1">SOUTH AFRICA</text>
 
           {/* Animated Journey Line */}
           <motion.path
-            id="journeyPath"
-            d="M520 240 Q420 310 280 380"
+            d="M555 245 Q430 320 295 410"
             stroke="#d4af37"
             strokeWidth="2.5"
-            strokeDasharray="8 4"
+            strokeDasharray="6 4"
             fill="none"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ pathLength: 1, opacity: 1 }}
-            transition={{ duration: 3, ease: "easeInOut", repeat: Infinity, repeatDelay: 1.5 }}
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: [0, 1, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           />
 
-          {/* SVG-native traveling particle using animateMotion tied to #journeyPath */}
-          <circle r="4" fill="#d4af37">
-            <animateMotion dur="3s" repeatCount="indefinite" begin="0s" rotate="auto">
-              <mpath href="#journeyPath" />
-            </animateMotion>
-          </circle>
+          {/* Pulsing Location Dots */}
+          <g>
+            {/* Tanzania Dot */}
+            <motion.circle 
+              cx="555" 
+              cy="245" 
+              r="7" 
+              fill="#d4af37"
+              animate={{ scale: [1, 1.4, 1], opacity: [0.8, 1, 0.8] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            />
+            <circle cx="555" cy="245" r="3" fill="#0f0c09" />
+
+            {/* Montagu Dot */}
+            <motion.circle 
+              cx="295" 
+              cy="410" 
+              r="7" 
+              fill="#d4af37"
+              animate={{ scale: [1, 1.4, 1], opacity: [0.8, 1, 0.8] }}
+              transition={{ duration: 2, repeat: Infinity, delay: 0.7 }}
+            />
+            <circle cx="295" cy="410" r="3" fill="#0f0c09" />
+          </g>
         </svg>
 
-        <div className="text-center mt-6 text-sm text-[#a38b6d] leading-relaxed font-light">
-          Single-origin Tanzanian cacao • Hand-selected for ceremony<br />
-          Brought with reverence to <span className="text-white font-normal">12 Kohler Street, Montagu</span>
+        <div className="text-center mt-4 text-xs text-[#a38b6d] tracking-widest">
+          12 KOHLER STREET, MONTAGU • EST. 2025
         </div>
       </div>
     </div>
