@@ -1,12 +1,6 @@
 "use client";
 
 import { motion, AnimatePresence } from 'framer-motion';
-<<<<<<< HEAD
-import { X, Award } from 'lucide-react';
-=======
-"use client";
-
-import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 import { useState } from 'react';
 
@@ -181,46 +175,3 @@ export default function CheckoutModal({ isOpen, onClose, total, onComplete }: Ch
     </AnimatePresence>
   );
 }
-                </div>
-
-                <div>
-                  <label className="block text-xs uppercase tracking-[1px] text-[#a38b6d] mb-1.5">Order Notes (Optional)</label>
-                  <textarea
-                    name="notes"
-                    value={formData.notes}
-                    onChange={handleChange}
-                    rows={2}
-                    className="w-full resize-y rounded-lg bg-[#111] border border-[#3a2a1f] px-4 py-3 text-white placeholder-[#555] focus:border-[#d4af37] focus:outline-none"
-                    placeholder="Gift message or special instructions..."
-                  />
-                </div>
-              </div>
-
-              {/* Submit Button */}
-              <button
-                type="submit"
-                disabled={isProcessing}
-                className="mt-2 w-full rounded-full bg-[#d4af37] py-4 text-sm font-medium text-black hover:bg-[#e8c97a] active:bg-[#c9a227] transition-all disabled:opacity-70 flex items-center justify-center gap-2"
-              >
-                {isProcessing ? (
-                  <>Processing your premium order...</>
-                ) : (
-                  <>Complete Purchase — R{total.toFixed(2)}</>
-                )}
-              </button>
-
-              <p className="text-center text-[10px] text-[#666]">
-                Secure checkout • 30-day satisfaction guarantee
-              </p>
-            </form>
-          </motion.div>
->>>>>>> 55f2293 (Fix CheckoutModal with clean premium luxury design + use client)
-        </div>
-      )}
-    </AnimatePresence>
-  );
-<<<<<<< HEAD
-}
-=======
-}
->>>>>>> 55f2293 (Fix CheckoutModal with clean premium luxury design + use client)
