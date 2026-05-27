@@ -67,9 +67,9 @@ export default function OrganicLiving() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-luxury-black/95 backdrop-blur-md border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-full bg-luxury-gold flex items-center justify-center">
-              <Leaf className="w-5 h-5 text-luxury-black" />
-            </div>
+            <div className="w-9 h-9 rounded-full bg-luxury-gold flex items-center justify-center overflow-hidden">
+                <img src="/Icccx.jpg" alt="Organic Living" className="w-full h-full object-cover" />
+              </div>
             <div>
               <div className="font-serif text-2xl tracking-[3px] text-luxury-gold">ORGANIC LIVING</div>
               <div className="text-[10px] text-white/50 -mt-1 tracking-[2px]">EST 2019 • CAPE TOWN</div>
@@ -276,8 +276,8 @@ export default function OrganicLiving() {
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-y-12">
           <div className="md:col-span-5">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-8 h-8 rounded-full bg-luxury-gold flex items-center justify-center">
-                <Leaf className="w-4 h-4 text-black" />
+              <div className="w-8 h-8 rounded-full bg-luxury-gold flex items-center justify-center overflow-hidden">
+                <img src="/Icccx.jpg" alt="Organic Living" className="w-full h-full object-cover" />
               </div>
               <div className="font-serif text-2xl text-luxury-gold tracking-[2px]">ORGANIC LIVING</div>
             </div>
