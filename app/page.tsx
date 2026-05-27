@@ -102,7 +102,7 @@ export default function OrganicLiving() {
         
         <div className="relative z-10 text-center px-6 max-w-5xl">
           <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full border border-luxury-gold/30 text-luxury-gold text-xs tracking-[3px] mb-6">
-            CAPE TOWN • ORGANIC • SINGLE ORIGIN
+            CAPE TOWN • ORGANIC • SINGLE-ORIGIN TANZANIA
           </div>
           
           <h1 className="text-[92px] md:text-[120px] leading-[0.92] font-serif tracking-tighter mb-6">
@@ -142,7 +142,7 @@ export default function OrganicLiving() {
       <div className="border-b border-white/10 py-5">
         <div className="max-w-7xl mx-auto px-6 flex flex-wrap justify-center items-center gap-x-12 gap-y-4 text-xs tracking-[2px] text-white/50">
           <div className="flex items-center gap-2"><Award className="w-4 h-4" /> CERTIFIED ORGANIC</div>
-          <div className="flex items-center gap-2"><Leaf className="w-4 h-4" /> SINGLE-ORIGIN PERU & ECUADOR</div>
+          <div className="flex items-center gap-2"><Leaf className="w-4 h-4" /> SINGLE-ORIGIN TANZANIA</div>
           <div className="flex items-center gap-2"><Users className="w-4 h-4" /> SUPPLIED TO 180+ CAFÉS</div>
           <div>TRACEABLE TO FARM</div>
         </div>
@@ -229,7 +229,7 @@ export default function OrganicLiving() {
 
         <div className="mt-16 text-center">
           <button 
-            onClick={() => alert('Thank you! Our wholesale team will contact you within 24 hours. Please email info@organicliving.co.za or use the form below.')}
+            onClick={() => alert('Thank you! Our wholesale team will contact you within 24 hours. Please email Businessfly369@gmail.com or call +27 66 353 5181.')}
             className="px-16 py-5 border border-luxury-gold text-luxury-gold hover:bg-luxury-gold hover:text-black text-sm tracking-[3px] transition-all"
           >
             REQUEST WHOLESALE ACCOUNT
@@ -279,7 +279,7 @@ export default function OrganicLiving() {
               <div className="font-serif text-2xl text-luxury-gold tracking-[2px]">ORGANIC LIVING</div>
             </div>
             <div className="text-white/50 max-w-xs">
-              Premium organic cacao from regenerative farms in South America. Delivered fresh to cafés and homes across Southern Africa.
+              Premium single-origin Tanzania organic cacao. Delivered fresh to cafés and homes across Southern Africa.
             </div>
           </div>
 
@@ -297,8 +297,8 @@ export default function OrganicLiving() {
             <div className="uppercase tracking-[2px] text-xs mb-4 text-white/50">CONTACT</div>
             <div className="space-y-1 text-white/70">
               <div>Cape Town, South Africa</div>
-              <a href="mailto:hello@organicliving.co.za" className="hover:text-luxury-gold">hello@organicliving.co.za</a>
-              <div>+27 21 123 4567</div>
+              <a href="mailto:Businessfly369@gmail.com" className="hover:text-luxury-gold">Businessfly369@gmail.com</a>
+              <div>+27 66 353 5181</div>
             </div>
             <div className="mt-8 text-[10px] text-white/40">
               © {new Date().getFullYear()} Organic Living. All rights reserved.<br />
