@@ -62,23 +62,7 @@ export default function OriginMap() {
             transition={{ duration: 3, ease: "easeInOut", repeat: Infinity, repeatDelay: 1.5 }}
           />
 
-          {/* Optimized fluid light particle traveling down the path */}
-          <motion.circle 
-            cx="520" 
-            cy="240" 
-            r="4" 
-            fill="#d4af37"
-            animate={{ 
-              cx: [520, 410, 280],
-              cy: [240, 310, 380],
-              opacity: [0, 1, 1, 0]
-            }}
-            transition={{ 
-              duration: 3, 
-              repeat: Infinity, 
-              ease: "easeInOut"
-            }}
-          />
+          {/* Decorative particle removed to avoid intermittent SVG attribute animation errors in some environments. */}
         </svg>
 
         <div className="text-center mt-6 text-sm text-[#a38b6d] leading-relaxed font-light">
