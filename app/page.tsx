@@ -8,6 +8,7 @@ import ProductCard from '@/components/ProductCard';
 import CartSidebar from '@/components/CartSidebar';
 import CheckoutModal from '@/components/CheckoutModal';
 import OurStory from '@/components/OurStory';
+import Products from '@/components/Products';
 
 export interface CartItem extends Product {
   quantity: number;
@@ -141,6 +142,8 @@ export default function OrganicLiving() {
       </section>
 
       <OurStory />
+
+      <Products />
 
       {/* TRUST BAR */}
       <div className="border-b border-white/10 py-5">
