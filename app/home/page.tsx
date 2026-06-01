@@ -137,10 +137,7 @@ export default function OrganicLiving() {
           </div>
         </div>
 
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center">
-          <div className="text-[10px] tracking-[3px] text-white/50 mb-2">SCROLL TO BEGIN</div>
-          <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 2, repeat: Infinity }} className="w-px h-12 bg-gradient-to-b from-transparent via-white/50 to-transparent" />
-        </div>
+        
       </section>
 
       <OurStory />
