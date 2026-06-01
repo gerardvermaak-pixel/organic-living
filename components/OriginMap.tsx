@@ -5,12 +5,20 @@ import { motion } from 'framer-motion';
 export default function OriginMap() {
   return (
     <div className="relative w-full max-w-[620px] mx-auto py-12">
+      {/* Header Section */}
       <div className="text-center mb-10">
-        <div className="text-[#d4af37] text-sm tracking-[3px] mb-2">FROM EARTH TO CEREMONY</div>
-        <h3 className="font-serif text-5xl text-white tracking-tight">Our Cacao’s Journey</h3>
-        <p className="text-[#a38b6d] mt-3">Single-origin Tanzanian beans • Delivered with intention to Montagu</p>
+        <div className="text-[#d4af37] text-sm tracking-[3px] mb-2 font-medium">
+          FROM EARTH TO CEREMONY
+        </div>
+        <h3 className="font-serif text-5xl text-white tracking-tight">
+          Our Cacao’s Journey
+        </h3>
+        <p className="text-[#a38b6d] mt-3 font-light text-sm sm:text-base">
+          Single-origin Tanzanian beans • Delivered with intention to Montagu
+        </p>
       </div>
 
+      {/* Map Container */}
       <div className="relative bg-[#0f0c09] border border-[#3a2a1f] rounded-3xl p-6 overflow-hidden shadow-2xl">
         <svg 
           viewBox="0 0 900 620" 
@@ -37,7 +45,17 @@ export default function OriginMap() {
             animate={{ pathLength: 1, opacity: 1 }}
             transition={{ duration: 2.8, ease: "easeInOut", repeat: Infinity, repeatDelay: 3 }}
           />
-          <text x="545" y="255" fill="#d4af37" fontSize="13" fontWeight="600" letterSpacing="1">TANZANIA</text>
+          <text 
+            x="545" 
+            y="255" 
+            fill="#d4af37" 
+            fontSize="13" 
+            fontWeight="600" 
+            letterSpacing="1"
+            className="pointer-events-none select-none font-sans"
+          >
+            TANZANIA
+          </text>
 
           {/* South Africa Outline (Animated) */}
           <motion.path
@@ -50,7 +68,17 @@ export default function OriginMap() {
             animate={{ pathLength: 1, opacity: 1 }}
             transition={{ duration: 2.8, ease: "easeInOut", repeat: Infinity, repeatDelay: 3, delay: 1.2 }}
           />
-          <text x="310" y="450" fill="#d4af37" fontSize="13" fontWeight="600" letterSpacing="1">SOUTH AFRICA</text>
+          <text 
+            x="310" 
+            y="450" 
+            fill="#d4af37" 
+            fontSize="13" 
+            fontWeight="600" 
+            letterSpacing="1"
+            className="pointer-events-none select-none font-sans"
+          >
+            SOUTH AFRICA
+          </text>
 
           {/* Animated Journey Line */}
           <motion.path
@@ -90,7 +118,8 @@ export default function OriginMap() {
           </g>
         </svg>
 
-        <div className="text-center mt-4 text-xs text-[#a38b6d] tracking-widest">
+        {/* Footer Subtext */}
+        <div className="text-center mt-4 text-xs text-[#a38b6d] tracking-widest font-medium pointer-events-none select-none">
           12 KOHLER STREET, MONTAGU • EST. 2025
         </div>
       </div>

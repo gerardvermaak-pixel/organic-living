@@ -1,19 +1,11 @@
-"use client";
-
 import ProductCard from './ProductCard';
-import { Product } from '@/lib/products';
+import { Product, products } from '@/lib/products';
 
-const slab: Product = {
-  id: 999,
-  name: '100% Dark Chocolate Slab',
-  price: 285,
-  weight: '1 Kg',
-  description:
-    'Chocolate in its purest form. Intense, complex flavor perfect for desserts, baking, and ceremonial use. Vegan, plant-based, and completely sugar-free.',
-  image: undefined,
-};
+interface ProductsProps {
+  onAddToCart: (product: Product) => void;
+}
 
-export default function Products() {
+export default function Products({ onAddToCart }: ProductsProps) {
   return (
     <section className="bg-[#0a0a0a] py-20 px-6">
       <div className="max-w-6xl mx-auto">
@@ -23,7 +15,13 @@ export default function Products() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          <ProductCard product={slab} />
+          {products.map((product) => (
+            <ProductCard
+              key={product.id}
+              product={product}
+              onAddToCart={onAddToCart}
+            />
+          ))}
         </div>
       </div>
     </section>

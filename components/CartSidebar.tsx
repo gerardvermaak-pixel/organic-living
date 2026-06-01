@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ShoppingCart, Plus, Minus } from 'lucide-react';
-import { CartItem } from '@/app/page';
+import { CartItem } from '@/lib/products';
 
 interface CartSidebarProps {
   isOpen: boolean;
