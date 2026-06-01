@@ -40,7 +40,7 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <Link href="/landing" className="flex items-center gap-3">
             <div className="w-9 h-9 rounded-full bg-luxury-gold flex items-center justify-center overflow-hidden">
-                <img src="/Icccx.jpg" alt="Organic Living" className="w-full h-full object-cover" />
+                <img src="/Cacao1%20(15).png" alt="Organic Living" className="w-full h-full object-cover" />
               </div>
             <div>
               <div className="font-serif text-2xl tracking-[3px] text-luxury-gold">ORGANIC LIVING</div>
