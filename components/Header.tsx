@@ -49,11 +49,11 @@ export default function Header() {
           </Link>
 
           <div className="flex items-center gap-8 text-sm uppercase tracking-widest">
-            <Link href="/#shop" className="hover:text-luxury-gold transition-colors">Shop</Link>
+            <Link href="/home#shop" className="hover:text-luxury-gold transition-colors">Shop</Link>
             <Link href="/learn-more" className="hover:text-luxury-gold transition-colors">Learn About Cacao</Link>
-            <Link href="/#benefits" className="hover:text-luxury-gold transition-colors">The Science</Link>
-            <Link href="/#cafes" className="hover:text-luxury-gold transition-colors">For Cafés</Link>
-            <Link href="/#story" className="hover:text-luxury-gold transition-colors">Our Story</Link>
+            <Link href="/home#benefits" className="hover:text-luxury-gold transition-colors">The Science</Link>
+            <Link href="/home#cafes" className="hover:text-luxury-gold transition-colors">For Cafés</Link>
+            <Link href="/home#story" className="hover:text-luxury-gold transition-colors">Our Story</Link>
             <button 
               onClick={() => setIsCartOpen(true)}
               className="flex items-center gap-2 hover:text-luxury-gold transition-colors relative"

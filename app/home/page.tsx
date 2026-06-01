@@ -80,11 +80,11 @@ export default function OrganicLiving() {
           </Link>
 
           <div className="flex items-center gap-8 text-sm uppercase tracking-widest">
-            <a href="/#shop" className="hover:text-luxury-gold transition-colors">Shop</a>
+            <a href="/home#shop" className="hover:text-luxury-gold transition-colors">Shop</a>
             <a href="/learn-more" className="hover:text-luxury-gold transition-colors">Learn About Cacao</a>
-            <a href="/#benefits" className="hover:text-luxury-gold transition-colors">The Science</a>
-            <a href="/#cafes" className="hover:text-luxury-gold transition-colors">For Cafés</a>
-            <a href="/#story" className="hover:text-luxury-gold transition-colors">Our Story</a>
+            <a href="/home#benefits" className="hover:text-luxury-gold transition-colors">The Science</a>
+            <a href="/home#cafes" className="hover:text-luxury-gold transition-colors">For Cafés</a>
+            <a href="/home#story" className="hover:text-luxury-gold transition-colors">Our Story</a>
             <button 
               onClick={() => setIsCartOpen(true)}
               className="flex items-center gap-2 hover:text-luxury-gold transition-colors relative"
@@ -294,10 +294,10 @@ export default function OrganicLiving() {
           <div className="md:col-span-3">
             <div className="uppercase tracking-[2px] text-xs mb-4 text-white/50">EXPLORE</div>
             <div className="space-y-2 text-white/70">
-                <a href="/#shop" className="block hover:text-white">The Collection</a>
-                <a href="/#benefits" className="block hover:text-white">The Science</a>
-                <a href="/#cafes" className="block hover:text-white">For Partners</a>
-                <a href="/#story" className="block hover:text-white">Our Story</a>
+                <a href="/home#shop" className="block hover:text-white">The Collection</a>
+                <a href="/home#benefits" className="block hover:text-white">The Science</a>
+                <a href="/home#cafes" className="block hover:text-white">For Partners</a>
+                <a href="/home#story" className="block hover:text-white">Our Story</a>
             </div>
           </div>
 
