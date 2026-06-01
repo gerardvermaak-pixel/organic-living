@@ -71,7 +71,7 @@ export default function OrganicLiving() {
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <Link href="/landing" className="flex items-center gap-3">
             <div className="w-9 h-9 rounded-full bg-luxury-gold flex items-center justify-center overflow-hidden">
-                <img src="/Icccx.jpg" alt="Organic Living" className="w-full h-full object-cover" />
+                <img src="/Cacao1%20(15).png" alt="Organic Living" className="w-full h-full object-cover" />
               </div>
             <div>
               <div className="font-serif text-2xl tracking-[3px] text-luxury-gold">ORGANIC LIVING</div>
@@ -80,11 +80,11 @@ export default function OrganicLiving() {
           </Link>
 
           <div className="flex items-center gap-8 text-sm uppercase tracking-widest">
-            <a href="#shop" className="hover:text-luxury-gold transition-colors">Shop</a>
+            <a href="/#shop" className="hover:text-luxury-gold transition-colors">Shop</a>
             <a href="/learn-more" className="hover:text-luxury-gold transition-colors">Learn About Cacao</a>
-            <a href="#benefits" className="hover:text-luxury-gold transition-colors">The Science</a>
-            <a href="#cafes" className="hover:text-luxury-gold transition-colors">For Cafés</a>
-            <a href="#story" className="hover:text-luxury-gold transition-colors">Our Story</a>
+            <a href="/#benefits" className="hover:text-luxury-gold transition-colors">The Science</a>
+            <a href="/#cafes" className="hover:text-luxury-gold transition-colors">For Cafés</a>
+            <a href="/#story" className="hover:text-luxury-gold transition-colors">Our Story</a>
             <button 
               onClick={() => setIsCartOpen(true)}
               className="flex items-center gap-2 hover:text-luxury-gold transition-colors relative"
@@ -297,10 +297,10 @@ export default function OrganicLiving() {
           <div className="md:col-span-3">
             <div className="uppercase tracking-[2px] text-xs mb-4 text-white/50">EXPLORE</div>
             <div className="space-y-2 text-white/70">
-              <a href="#shop" className="block hover:text-white">The Collection</a>
-              <a href="#benefits" className="block hover:text-white">The Science</a>
-              <a href="#cafes" className="block hover:text-white">For Partners</a>
-              <a href="#story" className="block hover:text-white">Our Story</a>
+                <a href="/#shop" className="block hover:text-white">The Collection</a>
+                <a href="/#benefits" className="block hover:text-white">The Science</a>
+                <a href="/#cafes" className="block hover:text-white">For Partners</a>
+                <a href="/#story" className="block hover:text-white">Our Story</a>
             </div>
           </div>
 
