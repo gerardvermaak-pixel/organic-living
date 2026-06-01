@@ -5,7 +5,7 @@ export default function Landing() {
     <div className="min-h-screen w-full relative">
       <div
         className="absolute inset-0 bg-center bg-cover"
-        style={{ backgroundImage: "url('/Icccx.jpg')" }}
+        style={{ backgroundImage: "url('/Cacao1%20(2).jpg')" }}
       />
 
       <div className="absolute inset-0 bg-black/50" />
