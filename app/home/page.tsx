@@ -103,6 +103,30 @@ export default function OrganicLiving() {
             </button>
           </div>
         </div>
+      {/* Mobile Menu Drawer */}
+      {isMobileMenuOpen && (
+        <div className="fixed inset-0 z-[60] md:hidden">
+          <div className="absolute inset-0 bg-black/80" onClick={toggleMobileMenu} />
+          <div className="absolute top-0 right-0 h-full w-4/5 max-w-sm bg-luxury-black border-l border-white/10 p-6">
+            <div className="flex justify-between items-center mb-8">
+              <div className="font-serif text-xl text-luxury-gold">Menu</div>
+              <button onClick={toggleMobileMenu} className="text-white p-2">
+                ✕
+              </button>
+            </div>
+            <div className="flex flex-col gap-6 text-lg">
+              <a href="/home#shop" onClick={toggleMobileMenu} className="hover:text-luxury-gold">Shop</a>
+              <a href="/learn-more" onClick={toggleMobileMenu} className="hover:text-luxury-gold">Learn About Cacao</a>
+              <a href="/home#benefits" onClick={toggleMobileMenu} className="hover:text-luxury-gold">The Science</a>
+              <a href="/home#cafes" onClick={toggleMobileMenu} className="hover:text-luxury-gold">For Cafés</a>
+              <a href="/home#story" onClick={toggleMobileMenu} className="hover:text-luxury-gold">Our Story</a>
+              <button onClick={() => { toggleMobileMenu(); setIsCartOpen(true); }} className="flex items-center gap-3 mt-4 text-left hover:text-luxury-gold">
+                <ShoppingCart className="w-5 h-5" /> Cart {cartCount > 0 && `(${cartCount})`}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
       </nav>
 
       {/* HERO */}
