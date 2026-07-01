@@ -103,6 +103,7 @@ export default function OrganicLiving() {
 
       {/* HERO */}
       <section className="relative h-screen flex items-center justify-center pt-20" style={{ backgroundImage: "url('/Cacao1%20(2).jpg')", backgroundSize: "cover", backgroundPosition: "center" }}>
+        <div className="absolute inset-0 bg-black/60"></div>
         <div className="absolute inset-0 bg-[radial-gradient(#d4af37_0.8px,transparent_1px)] bg-[length:4px_4px] opacity-10"></div>
         
         <div className="relative z-10 text-center px-6 max-w-5xl">
@@ -115,7 +116,7 @@ export default function OrganicLiving() {
             HUMAN<br />OPTIMIZATION<br /> <span className="text-luxury-gold">THROUGH CACAO</span>
           </h1>
           
-          <p className="max-w-lg mx-auto text-xl text-white/70 mb-10">
+          <p className="max-w-lg mx-auto text-2xl text-white mb-10">
             Premium organic cacao for high-performers, cafés & wellness spaces.
           </p>
 
