@@ -20,6 +20,7 @@ export default function OrganicLiving() {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [showCheckout, setShowCheckout] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const savedCart = localStorage.getItem('organicLivingCart');
@@ -64,6 +65,8 @@ export default function OrganicLiving() {
     setShowCheckout(false);
   };
 
+  const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+
   return (
     <div className="min-h-screen bg-luxury-black text-luxury-cream overflow-hidden">
       {/* NAV */}
@@ -79,7 +82,8 @@ export default function OrganicLiving() {
             </div>
           </Link>
 
-          <div className="flex items-center gap-8 text-sm uppercase tracking-widest">
+          {/* Desktop Nav */}
+          <div className="hidden md:flex items-center gap-8 text-sm uppercase tracking-widest">
             <a href="/home#shop" className="hover:text-luxury-gold transition-colors">Shop</a>
             <a href="/learn-more" className="hover:text-luxury-gold transition-colors">Learn About Cacao</a>
             <a href="/home#benefits" className="hover:text-luxury-gold transition-colors">The Science</a>
