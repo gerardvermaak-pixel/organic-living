@@ -11,7 +11,6 @@ import CheckoutModal from '@/components/CheckoutModal';
 import OurStory from '@/components/OurStory';
 import JourneySection from '@/components/JourneySection';
 import Products from '@/components/Products';
-import NutritionalProfile from '@/components/NutritionalProfile';
 
 export interface CartItem extends Product {
   quantity: number;
@@ -103,7 +102,7 @@ export default function OrganicLiving() {
       </nav>
 
       {/* HERO */}
-      <section className="relative h-screen flex items-center justify-center pt-20" style={{ backgroundImage: `url('/Cacao1%20(2).jpg')`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <section className="relative h-screen flex items-center justify-center pt-20" style={{ backgroundImage: "url('/Cacao1%20(2).jpg')", backgroundSize: "cover", backgroundPosition: "center" }}>
         <div className="absolute inset-0 bg-[radial-gradient(#d4af37_0.8px,transparent_1px)] bg-[length:4px_4px] opacity-10"></div>
         
         <div className="relative z-10 text-center px-6 max-w-5xl">
@@ -212,7 +211,6 @@ export default function OrganicLiving() {
       </section>
 
       {/* FOR CAFÉS & WELLNESS SHOPS */}
-      <NutritionalProfile />
       <section id="cafes" className="max-w-7xl mx-auto px-6 py-24">
         <div className="max-w-3xl">
           <div className="text-luxury-gold text-xs tracking-[4px] mb-4">B2B PARTNERSHIPS</div>
