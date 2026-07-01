@@ -20,7 +20,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         whileHover={{ y: -8 }}
         className="group bg-[#111] border border-[#3a2a1f] rounded-3xl overflow-hidden flex flex-col h-full"
       >
-        <div className="relative h-80 bg-[#1a140f] flex items-center justify-center overflow-hidden">
+         <div className="relative h-80 bg-[#1a140f] flex items-center justify-center overflow-hidden">
           <div className="text-8xl opacity-20">🍫</div>
           <div className="absolute inset-0 bg-[radial-gradient(#d4af37_0.8px,transparent_1px)] bg-[length:4px_4px] opacity-10" />
           

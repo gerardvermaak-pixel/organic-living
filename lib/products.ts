@@ -23,7 +23,7 @@ export const products: Product[] = [
     description: "Organic, single-origin Tanzania cacao — unroasted and nutrient-dense.",
     longDesc: "Whole organic raw cacao beans sourced from smallholder farms in Tanzania's Mbeya region. Unroasted to preserve natural enzymes, antioxidants, and flavour complexity.",
     benefits: ["Highest antioxidant levels", "Pure ceremonial flavour", "Rich in magnesium & iron", "Supports mood and focus"],
-    image: "/products/product-1-raw-beans.svg",
+    image: "/Cacao1%20(3).jpg",
     category: "raw"
   },
   {
@@ -34,7 +34,7 @@ export const products: Product[] = [
     description: "Organic, shelled and lightly roasted single-origin Tanzania beans for deep flavour.",
     longDesc: "Carefully roasted organic beans, shelled to unlock chocolatey notes while maintaining excellent nutrient density — ideal for snacking or grinding.",
     benefits: ["Deeper roasted flavour", "Easy to use in recipes", "Still rich in flavanols", "Great for confections"],
-    image: "/products/product-2-roasted-beans.svg",
+    image: "/Cacao1%20(4).jpg",
     category: "roasted"
   },
   {
@@ -45,7 +45,7 @@ export const products: Product[] = [
     description: "Organic cacao nibs from single-origin Tanzania — perfect topping or snack.",
     longDesc: "Broken pieces of roasted organic cacao bean offering intense flavour and texture. Use in smoothies, yoghurt, baking, or as a high-energy snack.",
     benefits: ["Versatile in recipes", "High fibre & healthy fats", "Natural theobromine boost", "No added sugar"],
-    image: "/products/product-3-nibs.svg",
+    image: "/Cacao1%20(6).jpg",
     category: "nibs"
   },
   {
@@ -56,7 +56,7 @@ export const products: Product[] = [
     description: "Organic, finely milled single-origin Tanzania cacao powder — perfect for lattes & baking.",
     longDesc: "Cold-pressed and finely milled organic cacao powder to retain volatile nutrients and deliver a rich, velvety chocolate flavour without added sugars or fillers.",
     benefits: ["High flavanol content", "Great for beverages & baking", "Supports cardiovascular health", "Pure, unsweetened"],
-    image: "/products/product-4-powder.svg",
+    image: "/Cacao1%20(7).jpg",
     category: "powder"
   },
   {
@@ -67,7 +67,7 @@ export const products: Product[] = [
     description: "100% organic single-origin Tanzania cacao paste — the base for artisan chocolate.",
     longDesc: "Stone-ground paste made from whole organic cacao beans. Use as a base for chocolate making or to add depth to recipes.",
     benefits: ["Concentrated flavour", "Ideal for chocolate-making", "Maximum theobromine and healthy fats", "Used by chefs and chocolatiers"],
-    image: "/products/product-5-paste.svg",
+    image: "/Cacao1%20(8).jpg",
     category: "paste"
   }
 ];

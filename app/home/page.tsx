@@ -102,7 +102,7 @@ export default function OrganicLiving() {
       </nav>
 
       {/* HERO */}
-      <section className="relative h-screen flex items-center justify-center pt-20">
+      <section className="relative h-screen flex items-center justify-center pt-20" style={{ backgroundImage: "url("/Cacao1%20(2).jpg")", backgroundSize: "cover", backgroundPosition: "center" }}>
         <div className="absolute inset-0 bg-[radial-gradient(#d4af37_0.8px,transparent_1px)] bg-[length:4px_4px] opacity-10"></div>
         
         <div className="relative z-10 text-center px-6 max-w-5xl">
