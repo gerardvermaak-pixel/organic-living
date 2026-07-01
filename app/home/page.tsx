@@ -11,6 +11,7 @@ import CheckoutModal from '@/components/CheckoutModal';
 import OurStory from '@/components/OurStory';
 import JourneySection from '@/components/JourneySection';
 import Products from '@/components/Products';
+import NutritionalProfile from '@/components/NutritionalProfile';
 
 export interface CartItem extends Product {
   quantity: number;
@@ -74,8 +75,8 @@ export default function OrganicLiving() {
                 <img src="/Cacao1%20(15).png" alt="Organic Living" className="w-full h-full object-cover" />
               </div>
             <div>
-              <div className="font-serif text-2xl tracking-[3px] text-luxury-gold">ORGANIC LIVING</div>
-              <div className="text-[10px] text-white/50 -mt-1 tracking-[2px]">EST 2019 • CAPE TOWN</div>
+              <div className="font-serif text-2xl tracking-[3px] text-luxury-gold">CACAO REVOLUTION</div>
+              <div className="text-[10px] text-white/50 -mt-1 tracking-[2px]">by Organic Living • Cape Town</div>
             </div>
           </Link>
 
@@ -102,10 +103,11 @@ export default function OrganicLiving() {
       </nav>
 
       {/* HERO */}
-      <section className="relative h-screen flex items-center justify-center pt-20" style={{ backgroundImage: "url("/Cacao1%20(2).jpg")", backgroundSize: "cover", backgroundPosition: "center" }}>
+      <section className="relative h-screen flex items-center justify-center pt-20" style={{ backgroundImage: `url('/Cacao1%20(2).jpg')`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="absolute inset-0 bg-[radial-gradient(#d4af37_0.8px,transparent_1px)] bg-[length:4px_4px] opacity-10"></div>
         
         <div className="relative z-10 text-center px-6 max-w-5xl">
+          <div className="text-luxury-gold text-xs tracking-[4px] mb-2">CACAO REVOLUTION</div>
           <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full border border-luxury-gold/30 text-luxury-gold text-xs tracking-[3px] mb-6">
             CAPE TOWN • ORGANIC • SINGLE-ORIGIN TANZANIA
           </div>
@@ -210,6 +212,7 @@ export default function OrganicLiving() {
       </section>
 
       {/* FOR CAFÉS & WELLNESS SHOPS */}
+      <NutritionalProfile />
       <section id="cafes" className="max-w-7xl mx-auto px-6 py-24">
         <div className="max-w-3xl">
           <div className="text-luxury-gold text-xs tracking-[4px] mb-4">B2B PARTNERSHIPS</div>
@@ -282,9 +285,9 @@ export default function OrganicLiving() {
           <div className="md:col-span-5">
             <div className="flex items-center gap-3 mb-6">
               <Link href="/landing" className="w-8 h-8 rounded-full bg-luxury-gold flex items-center justify-center overflow-hidden">
-                <img src="/Icccx.jpg" alt="Organic Living" className="w-full h-full object-cover" />
+                <img src="/logo.png" alt="Cacao Revolution" className="w-full h-full object-cover" />
               </Link>
-              <div className="font-serif text-2xl text-luxury-gold tracking-[2px]">ORGANIC LIVING</div>
+              <div className="font-serif text-2xl text-luxury-gold tracking-[2px]">CACAO REVOLUTION</div>
             </div>
             <div className="text-white/50 max-w-xs">
               Premium single-origin Tanzania organic cacao. Delivered fresh to cafés and homes across Southern Africa.
