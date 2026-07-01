@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
-  <rect width="100%" height="100%" fill="#7A4B2A"/>
-  <circle cx="200" cy="650" r="120" fill="#5d3218" opacity="0.15"/>
-  <g fill="#FFF3E6" font-family="Inter, sans-serif">
-    <text x="60" y="120" font-size="28">Organic Living</text>
-    <text x="60" y="520" font-size="64" font-weight="700">Cacao</text>
-    <text x="60" y="600" font-size="64" font-weight="700">Nibs</text>
-  </g>
-</svg>

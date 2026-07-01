@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
-  <rect width="100%" height="100%" fill="#6C4228"/>
-  <ellipse cx="900" cy="600" rx="200" ry="120" fill="#4a2513" opacity="0.12"/>
-  <g fill="#FAEBD9" font-family="Inter, sans-serif">
-    <text x="60" y="120" font-size="28">Organic Living</text>
-    <text x="60" y="520" font-size="64" font-weight="700">Cacao</text>
-    <text x="60" y="600" font-size="64" font-weight="700">Paste</text>
-  </g>
-</svg>
