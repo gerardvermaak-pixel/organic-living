@@ -174,7 +174,6 @@ export default function OrganicLiving() {
 
       <JourneySection />
 
-      <Products onAddToCart={addToCart} />
 
       {/* TRUST BAR */}
       <div className="border-b border-white/10 py-5">
