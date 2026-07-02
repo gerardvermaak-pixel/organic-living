@@ -16,8 +16,8 @@ export interface CartItem extends Product {
 
 export const products: Product[] = [
   {
-    id: 1,
-    name: "Raw Organic Cacao Beans",
+    id: 5,
+    name: "Cacao Paste",
     price: 800,
     unit: "kg",
     description: "Organic, single-origin Tanzania cacao — unroasted and nutrient-dense.",
@@ -45,7 +45,7 @@ export const products: Product[] = [
     description: "Organic cacao nibs from single-origin Tanzania — perfect topping or snack.",
     longDesc: "Broken pieces of roasted organic cacao bean offering intense flavour and texture. Use in smoothies, yoghurt, baking, or as a high-energy snack.",
     benefits: ["Versatile in recipes", "High fibre & healthy fats", "Natural theobromine boost", "No added sugar"],
-    image: "/Cacao1%20(10).jpg",
+    image: "/cacao-nibs.jpg",
     category: "nibs"
   },
   {
