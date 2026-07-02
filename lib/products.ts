@@ -67,7 +67,7 @@ export const products: Product[] = [
     description: "100% organic single-origin Tanzania cacao paste — the base for artisan chocolate.",
     longDesc: "Stone-ground paste made from whole organic cacao beans. Use as a base for chocolate making or to add depth to recipes.",
     benefits: ["Concentrated flavour", "Ideal for chocolate-making", "Maximum theobromine and healthy fats", "Used by chefs and chocolatiers"],
-    image: "/Cacao1%20(17).jpg",
+    image: "/cacao-paste.jpg",
     category: "paste"
   }
 ];
