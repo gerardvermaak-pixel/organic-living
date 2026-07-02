@@ -205,6 +205,9 @@ export default function OrganicLiving() {
       </section>
 
       {/* BENEFITS / SCIENCE */}
+      <div className="max-w-4xl mx-auto px-6 py-12">
+        <img src="/cacao-benefit.png" alt="Cacao Benefits" className="w-full rounded-3xl" />
+      </div>
       <section id="benefits" className="bg-luxury-brown py-24 border-y border-white/10">
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-16 items-center">
