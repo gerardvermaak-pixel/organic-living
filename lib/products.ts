@@ -34,7 +34,7 @@ export const products: Product[] = [
     description: "Organic, shelled and lightly roasted single-origin Tanzania beans for deep flavour.",
     longDesc: "Carefully roasted organic beans, shelled to unlock chocolatey notes while maintaining excellent nutrient density — ideal for snacking or grinding.",
     benefits: ["Deeper roasted flavour", "Easy to use in recipes", "Still rich in flavanols", "Great for confections"],
-    image: "/Cacao1%20(9).jpg",
+    image: "/roasted-beans.mp4",
     category: "roasted"
   },
   {
