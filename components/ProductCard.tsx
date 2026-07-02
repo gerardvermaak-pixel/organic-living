@@ -21,7 +21,22 @@ export default function ProductCard({ product }: ProductCardProps) {
         className="group bg-[#111] border border-[#3a2a1f] rounded-3xl overflow-hidden flex flex-col h-full"
       >
          <div className="relative h-80 bg-[#1a140f] flex items-center justify-center overflow-hidden">
-          <img src={product.image} alt={product.name} className="absolute inset-0 w-full h-full object-cover" />
+          {product.image && product.image.endsWith('.mp4') ? (
+            <video 
+              src={product.image} 
+              className="absolute inset-0 w-full h-full object-cover"
+              autoPlay 
+              muted 
+              loop 
+              playsInline
+            />
+          ) : (
+            <img 
+              src={product.image} 
+              alt={product.name} 
+              className="absolute inset-0 w-full h-full object-cover" 
+            />
+          )}
           <div className="absolute inset-0 bg-[radial-gradient(#d4af37_0.8px,transparent_1px)] bg-[length:4px_4px] opacity-10" />
           
           <div className="absolute top-4 right-4 bg-[#d4af37] text-black text-xs font-medium px-3 py-1 rounded-full tracking-wider">
