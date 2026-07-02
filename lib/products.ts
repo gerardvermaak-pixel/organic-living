@@ -23,7 +23,7 @@ export const products: Product[] = [
     description: "Organic, single-origin Tanzania cacao — unroasted and nutrient-dense.",
     longDesc: "Whole organic raw cacao beans sourced from smallholder farms in Tanzania's Mbeya region. Unroasted to preserve natural enzymes, antioxidants, and flavour complexity.",
     benefits: ["Highest antioxidant levels", "Pure ceremonial flavour", "Rich in magnesium & iron", "Supports mood and focus"],
-    image: "/Cacao1%20(5).jpg",
+    image: "/raw-cacao-beans.jpg",
     category: "raw"
   },
   {
