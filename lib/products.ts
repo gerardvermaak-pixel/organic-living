@@ -56,7 +56,7 @@ export const products: Product[] = [
     description: "Organic, finely milled single-origin Tanzania cacao powder — perfect for lattes & baking.",
     longDesc: "Cold-pressed and finely milled organic cacao powder to retain volatile nutrients and deliver a rich, velvety chocolate flavour without added sugars or fillers.",
     benefits: ["High flavanol content", "Great for beverages & baking", "Supports cardiovascular health", "Pure, unsweetened"],
-    image: "/Cacao1%20(11).jpg",
+    image: "/cacao-powder.jpg",
     category: "powder"
   },
   {
