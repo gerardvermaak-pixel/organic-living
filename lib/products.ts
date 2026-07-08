@@ -17,7 +17,7 @@ export interface CartItem extends Product {
 export const products: Product[] = [
   {
     id: 1,
-    name: "Raw Organic Cacao Beans",
+    name: "Raw organic beans",
     price: 800,
     unit: "kg",
     description: "Organic, single-origin Tanzania cacao — unroasted and nutrient-dense.",
