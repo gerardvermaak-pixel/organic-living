@@ -3,11 +3,15 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ShoppingCart } from 'lucide-react';
-import { Product, CartItem } from '@/lib/products';
+import { usePathname } from 'next/navigation';
 import CartSidebar from './CartSidebar';
 import CheckoutModal from './CheckoutModal';
+import { Product, CartItem } from '@/lib/products';
 
 export default function Header() {
+  const pathname = usePathname();
+  const isLanding = pathname === '/landing';
+
   const [cart, setCart] = useState<CartItem[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [showCheckout, setShowCheckout] = useState(false);
@@ -33,6 +37,11 @@ export default function Header() {
 
   const handleCheckout = () => { setIsCartOpen(false); setShowCheckout(true); };
   const completeOrder = () => { setCart([]); setShowCheckout(false); alert('Thank you for your order!'); };
+
+  // Hide header completely on landing page
+  if (isLanding) {
+    return null;
+  }
 
   return (
     <>
