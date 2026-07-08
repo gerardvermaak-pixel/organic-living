@@ -3,14 +3,13 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Leaf, Award, Users, ShoppingCart } from 'lucide-react';
+import { Leaf, Award, Users, ShoppingCart, Menu, X } from 'lucide-react';
 import { products, Product } from '@/lib/products';
 import ProductCard from '@/components/ProductCard';
 import CartSidebar from '@/components/CartSidebar';
 import CheckoutModal from '@/components/CheckoutModal';
 import OurStory from '@/components/OurStory';
 import JourneySection from '@/components/JourneySection';
-import Products from '@/components/Products';
 
 export interface CartItem extends Product {
   quantity: number;
@@ -20,6 +19,7 @@ export default function OrganicLiving() {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [showCheckout, setShowCheckout] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const savedCart = localStorage.getItem('organicLivingCart');
@@ -64,6 +64,9 @@ export default function OrganicLiving() {
     setShowCheckout(false);
   };
 
+  // Close mobile menu when clicking a link
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
+
   return (
     <div className="min-h-screen bg-luxury-black text-luxury-cream overflow-hidden">
       {/* NAV */}
@@ -79,7 +82,8 @@ export default function OrganicLiving() {
             </div>
           </Link>
 
-          <div className="flex items-center gap-8 text-sm uppercase tracking-widest">
+          {/* Desktop Nav */}
+          <div className="hidden md:flex items-center gap-8 text-sm uppercase tracking-widest">
             <a href="/#shop" className="hover:text-luxury-gold transition-colors">Shop</a>
             <a href="/learn-more" className="hover:text-luxury-gold transition-colors">Learn About Cacao</a>
             <a href="/#benefits" className="hover:text-luxury-gold transition-colors">The Science</a>
@@ -98,7 +102,36 @@ export default function OrganicLiving() {
               )}
             </button>
           </div>
+
+          {/* Mobile Menu Button */}
+          <button 
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden text-luxury-gold p-2"
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
         </div>
+
+        {/* Mobile Menu Dropdown */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden bg-luxury-black border-t border-white/10 px-6 py-6 text-sm uppercase tracking-widest">
+            <div className="flex flex-col gap-4">
+              <a href="/#shop" onClick={closeMobileMenu} className="hover:text-luxury-gold transition-colors py-1">Shop</a>
+              <a href="/learn-more" onClick={closeMobileMenu} className="hover:text-luxury-gold transition-colors py-1">Learn About Cacao</a>
+              <a href="/#benefits" onClick={closeMobileMenu} className="hover:text-luxury-gold transition-colors py-1">The Science</a>
+              <a href="/#cafes" onClick={closeMobileMenu} className="hover:text-luxury-gold transition-colors py-1">For Cafés</a>
+              <a href="/#story" onClick={closeMobileMenu} className="hover:text-luxury-gold transition-colors py-1">Our Story</a>
+              <button 
+                onClick={() => { setIsCartOpen(true); closeMobileMenu(); }}
+                className="flex items-center gap-2 hover:text-luxury-gold transition-colors py-1 text-left"
+              >
+                <ShoppingCart className="w-4 h-4" />
+                CART {cartCount > 0 && `(${cartCount})`}
+              </button>
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* HERO */}
@@ -110,7 +143,7 @@ export default function OrganicLiving() {
             CAPE TOWN • ORGANIC • SINGLE-ORIGIN TANZANIA
           </div>
           
-          <h1 className="text-[92px] md:text-[120px] leading-[0.92] font-serif tracking-tighter mb-6">
+          <h1 className="text-[72px] sm:text-[92px] md:text-[120px] leading-[0.92] font-serif tracking-tighter mb-6">
             HUMAN<br />OPTIMIZATION<br /> <span className="text-luxury-gold">THROUGH CACAO</span>
           </h1>
           
@@ -136,15 +169,30 @@ export default function OrganicLiving() {
             </motion.a>
           </div>
         </div>
+      </section>
 
-        
+      {/* SHOP / PRODUCTS SECTION - MOVED UP right after hero for better mobile + desktop flow */}
+      <section id="shop" className="max-w-7xl mx-auto px-6 pt-16 pb-20">
+        <div className="text-center mb-16">
+          <div className="text-luxury-gold text-xs tracking-[4px] mb-3">DISCOVER THE COLLECTION</div>
+          <h2 className="text-5xl md:text-6xl font-serif tracking-tight">Our Premium Cacao</h2>
+          <p className="mt-4 text-xl text-white/60 max-w-md mx-auto">Five exceptional forms. One uncompromising standard.</p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {products.map((product) => (
+            <ProductCard key={product.id} product={product} onAddToCart={addToCart} />
+          ))}
+        </div>
+
+        <div className="text-center mt-12 text-sm text-white/50">
+          All prices in South African Rand (ZAR). Bulk discounts available for cafés & wellness centres.
+        </div>
       </section>
 
       <OurStory />
 
       <JourneySection />
-
-      <Products onAddToCart={addToCart} />
 
       {/* TRUST BAR */}
       <div className="border-b border-white/10 py-5">
@@ -156,32 +204,13 @@ export default function OrganicLiving() {
         </div>
       </div>
 
-      {/* SHOP SECTION */}
-      <section id="shop" className="max-w-7xl mx-auto px-6 pt-24 pb-20">
-        <div className="text-center mb-16">
-          <div className="text-luxury-gold text-xs tracking-[4px] mb-3">DISCOVER THE COLLECTION</div>
-          <h2 className="text-6xl font-serif tracking-tight">Our Premium Cacao</h2>
-          <p className="mt-4 text-xl text-white/60 max-w-md mx-auto">Five exceptional forms. One uncompromising standard.</p>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} onAddToCart={addToCart} />
-          ))}
-        </div>
-
-        <div className="text-center mt-12 text-sm text-white/50">
-          All prices in South African Rand (ZAR). Bulk discounts available for cafés & wellness centres.
-        </div>
-      </section>
-
       {/* BENEFITS / SCIENCE */}
       <section id="benefits" className="bg-luxury-brown py-24 border-y border-white/10">
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
               <div className="text-luxury-gold text-xs tracking-[4px] mb-4">THE SCIENCE OF OPTIMIZATION</div>
-              <h2 className="text-6xl font-serif tracking-tight leading-none mb-8">
+              <h2 className="text-5xl md:text-6xl font-serif tracking-tight leading-none mb-8">
                 Nature's most powerful<br />performance enhancer.
               </h2>
               <p className="text-xl text-white/70 max-w-md">
@@ -213,7 +242,7 @@ export default function OrganicLiving() {
       <section id="cafes" className="max-w-7xl mx-auto px-6 py-24">
         <div className="max-w-3xl">
           <div className="text-luxury-gold text-xs tracking-[4px] mb-4">B2B PARTNERSHIPS</div>
-          <h2 className="text-7xl font-serif tracking-tighter leading-none mb-8">
+          <h2 className="text-6xl md:text-7xl font-serif tracking-tighter leading-none mb-8">
             Supplying the finest<br />cafés & wellness spaces
           </h2>
           <p className="text-2xl text-white/70">
@@ -250,7 +279,7 @@ export default function OrganicLiving() {
       <section id="story" className="bg-luxury-brown py-24 border-y border-white/10">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <div className="text-luxury-gold text-xs tracking-[4px] mb-6">ESTABLISHED IN CAPE TOWN</div>
-          <h2 className="text-6xl font-serif tracking-tight max-w-3xl mx-auto leading-none mb-10">
+          <h2 className="text-5xl md:text-6xl font-serif tracking-tight max-w-3xl mx-auto leading-none mb-10">
             We believe the best cacao in the world should be accessible to those who value quality over quantity.
           </h2>
           
@@ -265,7 +294,7 @@ export default function OrganicLiving() {
       <section className="py-24 text-center border-b border-white/10">
         <div className="max-w-xl mx-auto px-6">
           <div className="text-luxury-gold text-xs tracking-[3px] mb-4">READY TO OPTIMIZE?</div>
-          <h2 className="text-6xl font-serif tracking-tight mb-8">Start your journey with the world's most powerful superfood.</h2>
+          <h2 className="text-5xl md:text-6xl font-serif tracking-tight mb-8">Start your journey with the world's most powerful superfood.</h2>
           
           <button 
             onClick={() => document.getElementById('shop')?.scrollIntoView({ behavior: 'smooth' })}
