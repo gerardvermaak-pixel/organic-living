@@ -64,7 +64,6 @@ export default function OrganicLiving() {
     setShowCheckout(false);
   };
 
-  // Close mobile menu when clicking a link
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
   return (
@@ -134,44 +133,43 @@ export default function OrganicLiving() {
         )}
       </nav>
 
-      {/* HERO */}
-      <section className="relative h-screen flex items-center justify-center pt-20">
-        <div className="absolute inset-0 bg-[radial-gradient(#d4af37_0.8px,transparent_1px)] bg-[length:4px_4px] opacity-10"></div>
-        
-        <div className="relative z-10 text-center px-6 max-w-5xl">
-          <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full border border-luxury-gold/30 text-luxury-gold text-xs tracking-[3px] mb-6">
-            CAPE TOWN • ORGANIC • SINGLE-ORIGIN TANZANIA
-          </div>
-          
-          <h1 className="text-[72px] sm:text-[92px] md:text-[120px] leading-[0.92] font-serif tracking-tighter mb-6">
-            HUMAN<br />OPTIMIZATION<br /> <span className="text-luxury-gold">THROUGH CACAO</span>
+      {/* IMPROVED HERO SECTION */}
+      <section className="relative min-h-[100dvh] flex items-center justify-center pt-20 pb-16 overflow-hidden">
+        {/* Background texture */}
+        <div className="absolute inset-0 bg-[radial-gradient(#d4af37_0.6px,transparent_1px)] bg-[length:5px_5px] opacity-10" />
+        <div className="absolute inset-0 bg-black/60" />
+
+        <div className="relative z-10 max-w-5xl px-6 text-center">
+          {/* Small tagline */}
+          <div className="text-luxury-gold text-xs tracking-[4px] mb-4">SINGLE-ORIGIN TANZANIA • CEREMONIAL GRADE</div>
+
+          {/* Main Headline - better hierarchy and sizing */}
+          <h1 className="text-white text-6xl sm:text-7xl md:text-[92px] leading-[0.92] font-serif tracking-[-2.5px] mb-6">
+            HUMAN<br />
+            <span className="text-luxury-gold">OPTIMIZATION</span><br />
+            THROUGH <span className="text-luxury-gold">CACAO</span>
           </h1>
-          
-          <p className="max-w-lg mx-auto text-xl text-white/70 mb-10">
+
+          <p className="max-w-lg mx-auto text-xl text-white/80 mb-10">
             Premium organic cacao for high-performers, cafés & wellness spaces.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <motion.a 
-              href="#shop"
-              className="px-12 py-4 bg-luxury-gold text-luxury-black font-medium text-sm tracking-[2px] hover:bg-white transition-all flex items-center justify-center gap-3 group"
-              whileHover={{ scale: 1.02 }}
-            >
-              SHOP NOW
-              <div className="group-hover:-rotate-45 transition-transform">→</div>
-            </motion.a>
-            
-            <motion.a 
-              href="#cafes"
-              className="px-12 py-4 border border-white/30 hover:bg-white/5 text-sm tracking-[2px] transition-all flex items-center justify-center"
-            >
-              FOR CAFÉS & WELLNESS
-            </motion.a>
-          </div>
+          {/* Elegant CTA Button */}
+          <a 
+            href="#shop" 
+            className="inline-flex items-center justify-center gap-3 px-14 py-4 bg-luxury-gold text-luxury-black font-medium tracking-[2px] text-sm rounded-full hover:bg-white transition-all active:scale-[0.985]"
+          >
+            SHOP NOW <span className="text-lg leading-none">→</span>
+          </a>
+        </div>
+
+        {/* Bottom tag */}
+        <div className="absolute bottom-8 left-0 right-0 text-center text-xs tracking-[3px] text-white/60">
+          FOR CAFÉS & WELLNESS
         </div>
       </section>
 
-      {/* SHOP / PRODUCTS SECTION - MOVED UP right after hero for better mobile + desktop flow */}
+      {/* SHOP / PRODUCTS SECTION */}
       <section id="shop" className="max-w-7xl mx-auto px-6 pt-16 pb-20">
         <div className="text-center mb-16">
           <div className="text-luxury-gold text-xs tracking-[4px] mb-3">DISCOVER THE COLLECTION</div>
