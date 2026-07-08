@@ -8,6 +8,8 @@ export interface Product {
   benefits: string[];
   image: string;
   category: string;
+  wholesalePrice?: number;
+  sizes?: { size: string; price: number; unit: string }[];
 }
 
 export interface CartItem extends Product {
@@ -62,12 +64,19 @@ export const products: Product[] = [
   {
     id: 5,
     name: "Cacao Paste",
-    price: 1000,
+    price: 995,
     unit: "kg",
-    description: "100% organic single-origin Tanzania cacao paste — the base for artisan chocolate.",
-    longDesc: "Stone-ground paste made from whole organic cacao beans. Use as a base for chocolate making or to add depth to recipes.",
-    benefits: ["Concentrated flavour", "Ideal for chocolate-making", "Maximum theobromine and healthy fats", "Used by chefs and chocolatiers"],
+    description: "100% organic single-origin Tanzania cacao paste — premium base for drinking cacao & artisan chocolate.",
+    longDesc: "Stone-ground paste made from whole organic cacao beans. The gold standard for drinking cacao and chocolate making. Available in retail sizes and wholesale for cafés.",
+    benefits: ["Concentrated flavour", "Ideal for drinking cacao", "Maximum theobromine and healthy fats", "Used by chefs and chocolatiers"],
     image: "/products/product-5-paste.svg",
-    category: "paste"
+    category: "paste",
+    wholesalePrice: 795,
+    sizes: [
+      { size: "250g", price: 315, unit: "pouch" },
+      { size: "500g", price: 575, unit: "pouch" },
+      { size: "1kg", price: 995, unit: "pouch" },
+      { size: "5kg", price: 4450, unit: "bulk" }
+    ]
   }
 ];
